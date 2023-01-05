@@ -1,0 +1,15 @@
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/termi_mobile
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/assets/mountain1.jpg
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/assets/mountain2.webp
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/assets/mountain2.svg
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/assets/mountain1.svg
+/home/vangu/Documents/Programming/Andrej123456789/Termi-Mobile/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
