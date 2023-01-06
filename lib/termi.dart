@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'models/zero.dart';
 import 'models/one.dart';
@@ -57,23 +57,19 @@ class ModelChooserPage extends State<ModelChooser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Termi - welcome screen"),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: Svg("assets/mountain${random(1, 3)}.svg"), fit: BoxFit.cover)),
-        ),
-      ),
-      body: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: Svg("assets/mountain${random(1, 3)}.svg"),
-                  fit: BoxFit.cover)),
-          child: Center(
+      body: Stack(
+        children: <Widget>[
+          Positioned.fill(
+            child: SvgPicture.asset(
+              "assets/mountain${random(1, 3)}.svg",
+              fit: BoxFit.cover,
+            ),
+          ),
+          Center(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            mainAxisSize: MainAxisSize.min,
+            children: [
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -98,7 +94,9 @@ class ModelChooserPage extends State<ModelChooser> {
                       fixedSize: const Size(300, 80)),
                   child: const Text("Model 1"))
             ],
-          ))),
+          )),
+        ],
+      ),
     );
   }
 }
