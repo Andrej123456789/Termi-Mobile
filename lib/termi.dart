@@ -18,6 +18,7 @@ MaterialColor createMaterialColor(Color color) {
   for (int i = 1; i < 10; i++) {
     strengths.add(0.1 * i);
   }
+
   for (var strength in strengths) {
     final double ds = 0.5 - strength;
     swatch[(strength * 1000).round()] = Color.fromRGBO(
@@ -39,7 +40,7 @@ class Termi extends StatelessWidget {
     return MaterialApp(
       title: 'Termi',
       theme: ThemeData(
-        primarySwatch: createMaterialColor(Colors.transparent),
+        primarySwatch: createMaterialColor(Colors.white),
       ),
       home: const ModelChooser(),
     );
@@ -56,8 +57,8 @@ class ModelChooser extends StatefulWidget {
 class ModelChooserPage extends State<ModelChooser> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return Center(
+      child: Stack(
         children: <Widget>[
           Positioned.fill(
             child: SvgPicture.asset(
@@ -66,35 +67,46 @@ class ModelChooserPage extends State<ModelChooser> {
             ),
           ),
           Center(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ElevatedButton(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ModelZero()));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ModelZero(),
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(20.0),
-                      fixedSize: const Size(300, 80)),
-                  child: const Text("Model 0")),
-              const SizedBox(height: 30),
-              ElevatedButton(
+                    padding: const EdgeInsets.all(20.0),
+                    fixedSize: const Size(300, 80),
+                    backgroundColor: Colors.transparent,
+                  ),
+                  child: const Text("Model 0"),
+                ),
+                const SizedBox(height: 30),
+                ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ModelOne()));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ModelOne(),
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(20.0),
-                      fixedSize: const Size(300, 80)),
-                  child: const Text("Model 1"))
-            ],
-          )),
+                    padding: const EdgeInsets.all(20.0),
+                    fixedSize: const Size(300, 80),
+                    backgroundColor: Colors.transparent,
+                  ),
+                  child: const Text("Model 1"),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
