@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -55,6 +56,23 @@ class ModelChooser extends StatefulWidget {
 }
 
 class ModelChooserPage extends State<ModelChooser> {
+  late Timer timer;
+  String photo = "";
+
+  @override
+  void initState() {
+    photo = "assets/mountain${random(1, 5)}.svg";
+    super.initState();
+    timer = Timer(const Duration(seconds: 1), _nextPic);
+  }
+
+  void _nextPic() {
+    setState(() {
+      photo = "assets/mountain${random(1, 5)}.svg";
+    });
+    timer = Timer(const Duration(seconds: 5), _nextPic);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -62,7 +80,7 @@ class ModelChooserPage extends State<ModelChooser> {
         children: <Widget>[
           Positioned.fill(
             child: SvgPicture.asset(
-              "assets/mountain${random(1, 3)}.svg",
+              photo != "" ? photo : 'assets/mountain1.jpg',
               fit: BoxFit.cover,
             ),
           ),
@@ -81,10 +99,11 @@ class ModelChooserPage extends State<ModelChooser> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(20.0),
-                    fixedSize: const Size(300, 80),
-                    backgroundColor: Colors.transparent,
-                  ),
+                      padding: const EdgeInsets.all(20.0),
+                      fixedSize: const Size(300, 80),
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.white54),
                   child: const Text("Model 0"),
                 ),
                 const SizedBox(height: 30),
@@ -96,12 +115,15 @@ class ModelChooserPage extends State<ModelChooser> {
                         builder: (context) => const ModelOne(),
                       ),
                     );
+
+                    Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(20.0),
-                    fixedSize: const Size(300, 80),
-                    backgroundColor: Colors.transparent,
-                  ),
+                      padding: const EdgeInsets.all(20.0),
+                      fixedSize: const Size(300, 80),
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.white54),
                   child: const Text("Model 1"),
                 )
               ],

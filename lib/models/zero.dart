@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:math';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -32,6 +33,23 @@ class ModelZeroPage extends State<ModelZero> {
     });
   }
 
+  late Timer timer;
+  String photo = "";
+
+  @override
+  void initState() {
+    photo = "assets/night${random(1, 3)}.svg";
+    super.initState();
+    timer = Timer(const Duration(seconds: 1), _nextPic);
+  }
+
+  void _nextPic() {
+    setState(() {
+      photo = "assets/night${random(1, 3)}.svg";
+    });
+    timer = Timer(const Duration(seconds: 5), _nextPic);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +57,7 @@ class ModelZeroPage extends State<ModelZero> {
         children: [
           Positioned.fill(
             child: SvgPicture.asset(
-              "assets/background.svg",
+              photo != "" ? photo : 'assets/night2.jpg',
               fit: BoxFit.cover,
             ),
           ),
@@ -79,10 +97,11 @@ class ModelZeroPage extends State<ModelZero> {
                     child: TextField(
                       controller: controller,
                       focusNode: focusNode,
+                      autofocus: true,
                       decoration: InputDecoration(
                         labelText: path,
                         labelStyle: const TextStyle(
-                          color: Colors.white24,
+                          color: Colors.white54,
                         ),
                         enabledBorder: const OutlineInputBorder(
                           borderSide: BorderSide(
