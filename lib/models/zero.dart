@@ -40,7 +40,7 @@ class ModelZeroPage extends State<ModelZero> {
   void initState() {
     photo = "assets/night${random(1, 3)}.svg";
     super.initState();
-    timer = Timer(const Duration(seconds: 1), _nextPic);
+    timer = Timer(const Duration(seconds: 5), _nextPic);
   }
 
   void _nextPic() {
@@ -116,6 +116,7 @@ class ModelZeroPage extends State<ModelZero> {
                       ),
                       onSubmitted: (value) {
                         if (value == "return") {
+                          timer.cancel();
                           Navigator.pop(context);
                         }
 

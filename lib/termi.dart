@@ -116,7 +116,7 @@ class ModelChooserPage extends State<ModelChooser> {
                       ),
                     );
 
-                    Navigator.pop(context);
+                    //Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(20.0),

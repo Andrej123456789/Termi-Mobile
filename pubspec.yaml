@@ -1,5 +1,5 @@
 name: termi_mobile
-description: A new Flutter project.
+description: Mobile version of Termi written in Dart using Flutter.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -32,11 +32,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # google_fonts: ^2.3.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^0.1.3
   flutter_svg: ^1.1.6
+  xterm: ^3.4.0
 
 dev_dependencies:
   flutter_test:
