@@ -1,3 +1,5 @@
+**PROJECT IS DONE!**
+
 # Termi-Mobile
 Mobile version of [Termi](https://github.com/ringwormGO-organization/Termi) written in Dart using Flutter
 
